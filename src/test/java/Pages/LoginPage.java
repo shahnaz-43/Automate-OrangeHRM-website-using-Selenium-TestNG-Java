@@ -6,21 +6,20 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-    @FindBy(name="username")
+    @FindBy(name = "username")
     WebElement txtUserName;
 
-    @FindBy(name="password")
+    @FindBy(name = "password")
     WebElement txtPassword;
 
     @FindBy(css = "[type=submit]")
     WebElement btnLogin;
 
-    public LoginPage(WebDriver driver){
-        PageFactory.initElements(driver,this);
-
+    public LoginPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public void doLogin(String username,String password){
+    public void doLogin(String username, String password) {
         txtUserName.sendKeys(username);
         txtPassword.sendKeys(password);
         btnLogin.click();
